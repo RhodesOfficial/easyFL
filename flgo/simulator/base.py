@@ -609,6 +609,7 @@ def with_clock(communicate):
         ...         ...
     ```
     """
+    @functools.wraps(communicate)
     def communicate_with_clock(self, selected_clients, mtype=0, asynchronous=False):
         simulator = self.gv.simulator
         clock = self.gv.clock
